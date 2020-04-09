@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="前言什么是Python&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;记得2016年8月的时候，我第一次接触python。我就对它很好奇，比如: 这个print好神奇、wa if-else 居然还可以玩 等等现在看起来很弱智的问题。当然我并不像很多科班出生的同学那样，对计算机基础，编程语言，算法知识有比较系统性的学习和了解。所以，如果你看">
+<meta property="og:type" content="website">
+<meta property="og:title" content="和我一起学习Python吧">
+<meta property="og:url" content="http://yoursite.com/python/index.html">
+<meta property="og:site_name" content="KobeTian">
+<meta property="og:description" content="前言什么是Python&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;记得2016年8月的时候，我第一次接触python。我就对它很好奇，比如: 这个print好神奇、wa if-else 居然还可以玩 等等现在看起来很弱智的问题。当然我并不像很多科班出生的同学那样，对计算机基础，编程语言，算法知识有比较系统性的学习和了解。所以，如果你看">
+<meta property="article:published_time" content="2020-04-09T07:03:35.000Z">
+<meta property="article:modified_time" content="2020-04-09T10:00:00.560Z">
+<meta property="article:author" content="KobeTian">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/python/"/>
+
+
+
+
+
+  <title>和我一起学习Python吧 | KobeTian</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">KobeTian</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">但行好事,莫问前程</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/home" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-python">
+          <a href="/python/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            python
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-golang">
+          <a href="/golang/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            golang
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-c++">
+          <a href="/c/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            c++
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-算法">
+          <a href="/algorithm/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            算法
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-数据库">
+          <a href="/sql/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            数据库
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-linux">
+          <a href="/linux/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            linux
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+    
+    
+    <div class="post-block page">
+      <header class="post-header">
+
+	<h1 class="post-title" itemprop="name headline">和我一起学习Python吧</h1>
+
+
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+        
+        
+          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h3 id="什么是Python"><a href="#什么是Python" class="headerlink" title="什么是Python"></a>什么是Python</h3><p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;记得2016年8月的时候，我第一次接触python。我就对它很好奇，比如: 这个print好神奇、wa if-else 居然还可以玩 等等现在看起来很弱智的问题。当然我并不像很多科班出生的同学那样，对计算机基础，编程语言，算法知识有比较系统性的学习和了解。所以，如果你看到这篇文章，嗯嗯，我想我们是同一战线的。<br>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;好吧，言归正传，什么是python？我们先来看看官方的解释: <strong>Python是一种多范式，通用，解释的高级编程语言</strong>。是不是有点懵逼，别着急后面还有一段话: <strong>Python允许程序员使用不同的编程风格来创建简单或复杂的程序，获得更快的结果并编写代码，就像用人类语言说话一样。</strong> 一句话概括，Python学习起来很简单，写Python就和你自己说话一样。作为一个Pythoner 这一点我非常赞同。当然Python还有很多很多的优点哈，这里就不一一举例了。</p>
+<h3 id="Python可以做什么"><a href="#Python可以做什么" class="headerlink" title="Python可以做什么"></a>Python可以做什么</h3><p>以我短暂的工作经验来看, 大概可以分为以下几类</p>
+<ul>
+<li>web开发: Python有很多优秀的框架 <a href="https://www.djangoproject.com/" target="_blank" rel="noopener">Django</a>、<a href="https://flask.palletsprojects.com/en/1.1.x/" target="_blank" rel="noopener">Flask</a>、<a href="https://www.tornadoweb.org/en/stable/" target="_blank" rel="noopener">Tornado</a></li>
+<li>网络爬虫: <a href="https://docs.aiohttp.org/en/stable/" target="_blank" rel="noopener">aiohttp</a>、<a href="https://scrapy-chs.readthedocs.io/zh_CN/0.24/" target="_blank" rel="noopener">Scrapy</a></li>
+<li>数据分析: <a href="https://pandas.pydata.org/" target="_blank" rel="noopener">pandas</a> 、<a href="https://numpy.org/" target="_blank" rel="noopener">numpy</a></li>
+<li>自动化运维: 主要还是用到python自身的一些属性</li>
+<li>人工智能: 机器学习-<a href="https://scikit-learn.org/" target="_blank" rel="noopener">Scikit-learn</a>、深度学习-<a href="https://tensorflow.google.cn/" target="_blank" rel="noopener">TensorFlow</a></li>
+</ul>
+<h3 id="怎么学习Python"><a href="#怎么学习Python" class="headerlink" title="怎么学习Python"></a>怎么学习Python</h3><ul>
+<li>Python基础知识的学习</li>
+<li>Python进阶知识的学习</li>
+</ul>
+<h2 id="和我一起学习Python"><a href="#和我一起学习Python" class="headerlink" title="和我一起学习Python"></a>和我一起学习Python</h2><h3 id="Python基础"><a href="#Python基础" class="headerlink" title="Python基础"></a>Python基础</h3><ul>
+<li><a href="./python基础之基础语法.md">python基础01之基础语法</a></li>
+</ul>
+<h3 id="Python进阶"><a href="#Python进阶" class="headerlink" title="Python进阶"></a>Python进阶</h3><h3 id="Django"><a href="#Django" class="headerlink" title="Django"></a>Django</h3><h3 id="Flask"><a href="#Flask" class="headerlink" title="Flask"></a>Flask</h3><h3 id="Tornado"><a href="#Tornado" class="headerlink" title="Tornado"></a>Tornado</h3><h3 id="Scrapy"><a href="#Scrapy" class="headerlink" title="Scrapy"></a>Scrapy</h3><p><strong>好啦，以上!</strong></p>
+
+        
+      </div>
+      
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://avatars0.githubusercontent.com/u/54635927?s=400&u=61f1fad30d5eb3e1f1121a3f9399b0869df26237&v=4"
+                alt="KobeTian" />
+            
+              <p class="site-author-name" itemprop="name">KobeTian</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/kobe-tian" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="kobe.tian@icloud.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://stackoverflow.com/users/12674062/kobetian" target="_blank" title="StackOverflow">
+                      
+                        <i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://www.zhihu.com/people/imagine-dragons-32" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-globe"></i>知乎</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是Python"><span class="nav-number">1.1.</span> <span class="nav-text">什么是Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python可以做什么"><span class="nav-number">1.2.</span> <span class="nav-text">Python可以做什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#怎么学习Python"><span class="nav-number">1.3.</span> <span class="nav-text">怎么学习Python</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#和我一起学习Python"><span class="nav-number">2.</span> <span class="nav-text">和我一起学习Python</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Python基础"><span class="nav-number">2.1.</span> <span class="nav-text">Python基础</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python进阶"><span class="nav-number">2.2.</span> <span class="nav-text">Python进阶</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Django"><span class="nav-number">2.3.</span> <span class="nav-text">Django</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Flask"><span class="nav-number">2.4.</span> <span class="nav-text">Flask</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tornado"><span class="nav-number">2.5.</span> <span class="nav-text">Tornado</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Scrapy"><span class="nav-number">2.6.</span> <span class="nav-text">Scrapy</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KobeTian</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
